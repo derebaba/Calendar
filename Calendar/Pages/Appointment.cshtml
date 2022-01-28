@@ -1,0 +1,55 @@
+﻿@page "{id:int}"
+@model Calendar.Pages.AppointmentModel
+@{
+    ViewData["Title"] = "Appointment";
+}
+
+<div class="container border pt-3 pb-3 ps-5 pe-4">
+  <div class="row">
+    Choose your month:
+  </div>
+  <div class="row mt-3">
+    <div class="col-8">
+      <ul class="nav nav-pills nav-fill">
+        @for (int i = 0; i < @Model.MonthList.Count; i++)
+        {
+            string activeClass = Model.Appointment.Date.Month - 1 == i ? "active" : "";
+            <li class="nav-item border">
+              <a class="nav-link @activeClass" href="/Calendar/@(i + 1)">@Model.MonthList[i]</a>
+            </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div id="appointment-data" class="row mt-5">
+    <div class="col-5 border">
+        @foreach (var appointment in Model.AppointmentList)
+        {
+            @:<p>@appointment.Date: <a href="/Appointment/@appointment.Id">@appointment.Subject</a></p>
+        }
+    </div>
+    <div class="col-1"></div>
+    <div class="col-6 border">
+        <p>
+            Subject: @Model.Appointment.Subject
+        </p>
+        <p>
+            Date: @Model.Appointment.Date
+        </p>
+        <p>
+            Organizer: @Model.Appointment.Organizer
+        </p>
+        <p>
+            Attendees:
+            <ul>
+                @foreach (var attendee in Model.Appointment.Attendees)
+                {
+                    <li>
+                        @attendee.Name
+                    </li>
+                }
+            </ul>
+        </p>
+    </div>
+  </div>
+</div>
