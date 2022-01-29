@@ -1,4 +1,4 @@
-using Calendar.Infrastructure.Models;
+using Calendar.Application.Models;
 using Calendar.Infrastructure.Persistance;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

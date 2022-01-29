@@ -1,4 +1,4 @@
-﻿namespace Calendar.Infrastructure.Models
+﻿namespace Calendar.Application.Models
 {
     public class Appointment
     {

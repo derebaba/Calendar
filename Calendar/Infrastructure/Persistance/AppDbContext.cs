@@ -1,4 +1,4 @@
-﻿using Calendar.Infrastructure.Models;
+﻿using Calendar.Application.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Calendar.Infrastructure.Persistance

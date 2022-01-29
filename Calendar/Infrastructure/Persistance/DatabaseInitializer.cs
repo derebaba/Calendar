@@ -1,4 +1,4 @@
-﻿using Calendar.Infrastructure.Models;
+﻿using Calendar.Application.Models;
 
 namespace Calendar.Infrastructure.Persistance
 {
